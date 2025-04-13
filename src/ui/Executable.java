@@ -36,6 +36,7 @@ public class Executable {
     public void run() {
 
         System.out.println("Bienvenido a la creacion y suma de matrices numericas!:");
+        System.out.println("\nRecuerde que para poder sumar las matrices deben de tener la misma cantidad de filas y columnas!!");
 
         for  (int x = 1; x < 3; x++) {
             System.out.println("\nIngrese el numero de filas que tendra la matriz #"+x+": ");
@@ -48,10 +49,11 @@ public class Executable {
 
             if (x == 1) {
                 cont.inicializaMatriz1(filas, columnas);
-                System.out.println("La matriz 1 ya estaba inicializada.");
+                cont.inicializaMatrizSuma(filas, columnas);
+                System.out.println("\nLa matriz 1 y matriz suma ya esta inicializada.");
             } else {
                 cont.inicializaMatriz2(filas, columnas);
-                System.out.println("La matriz 2 ya estaba inicializada.");
+                System.out.println("\nLa matriz 2 ya esta inicializada.");
             }
 
             System.out.println("\nInserte los numeros que conformaran a la matriz "+x+": ");
@@ -81,24 +83,71 @@ public class Executable {
             }
         }
 
-        System.out.println("Ahora bien, procederemos a sumar las matrices #1 y #2.");
-        System.out.println("Este es el resultado de la suma:");
+        if (cont.getMatriz1().getCantFilas() != cont.getMatriz2().getCantFilas() || cont.getMatriz1().getCantColumnas() != cont.getMatriz2().getCantColumnas()) {
+            System.out.println("\nAhora bien, procederemos a sumar las matrices #1 y #2.");
+            System.out.println("Este es el resultado de la suma:");
 
+            for(int y = 0; y < cont.getMatriz1().getCantFilas(); y++) {
+                for(int z = 0; z < cont.getMatriz1().getCantColumnas(); z++) {
+                    int suma = cont.getMatriz1().getMatriz()[y][z] + cont.getMatriz2().getMatriz()[y][z];
+                    cont.getMatrizSuma().insertarValor(y, z, suma);
+                }
+            }
+
+            System.out.println();
+            for (int i = 0; i < cont.getMatrizSuma().getCantFilas(); i++) {
+                for (int j = 0; j < cont.getMatrizSuma().getCantColumnas(); j++) {
+                    System.out.print(cont.getMatrizSuma().getMatriz()[i][j] + " ");
+                }
+                System.out.println();
+            }
+        } else {
+            System.out.println("Debido a que la cantidad de espacios en ambas matrices no son iguales no se puede realizar una suma.");
+            System.out.println("Fin del programa.");
+        }
+
+        /*if (cont.getMatriz1().getCantFilas() > cont.getMatriz2().getCantFilas()) {
+            if (cont.getMatriz1().getCantColumnas() > cont.getMatriz2().getCantColumnas()) {
+                cont.inicializaMatrizSuma(cont.getMatriz1().getCantFilas(), cont.getMatriz1().getCantColumnas());
+            } else {
+                cont.inicializaMatrizSuma(cont.getMatriz1().getCantFilas(), cont.getMatriz2().getCantColumnas());
+            }
+        } else {
+            if (cont.getMatriz1().getCantColumnas() > cont.getMatriz2().getCantColumnas()) {
+                cont.inicializaMatrizSuma(cont.getMatriz2().getCantFilas(), cont.getMatriz1().getCantColumnas());
+            } else {
+                cont.inicializaMatrizSuma(cont.getMatriz2().getCantFilas(), cont.getMatriz2().getCantColumnas());
+            }
+        }
+        System.out.println("La matriz de suma ya esta inicializada.");
+
+        
         if (cont.getMatriz1().getCantFilas() > cont.getMatriz2().getCantFilas()) {
+            for(int y = 0; y < cont.getMatriz1().getCantFilas(); y++) {
 
-            for(int i = 0; i < cont.getMatriz1().getCantFilas(); y++) {
                 if (cont.getMatriz1().getCantColumnas() > cont.getMatriz2().getCantColumnas()) {
+                    for(int z = 0; z < cont.getMatriz1().getCantColumnas(); z++) {
+                        int sumaFila = cont.getMatriz1().getMatriz()[y][z] + cont.getMatriz2().getMatriz()[i][j]
+                        cont.getMatrizSuma().insertarValor(i, j, valor);
+                    }
 
                 } else {
+                    for(int z = 0; z < cont.getMatriz2().getCantColumnas(); z++) {
+
+                    }
 
                 }
             }
         } else {
+            for(int i = 0; i < cont.getMatriz2().getCantFilas(); y++) {
 
-            for(int i = 0; i < cont.getMatriz1().getCantFilas(); y++) {
                 if (cont.getMatriz1().getCantColumnas() > cont.getMatriz2().getCantColumnas()) {
+                    for(int z = 0; z < cont.getMatriz1().getCantColumnas(); z++) {
+                    }
 
                 } else {
+                    for(int z = 0; z < cont.getMatriz2().getCantColumnas(); z++) {
+                    }
                     
                 }
             }
@@ -109,7 +158,7 @@ public class Executable {
                     System.out.println("xxx");
                     
                 }
-            }
+            }*/
     }
 
     /**

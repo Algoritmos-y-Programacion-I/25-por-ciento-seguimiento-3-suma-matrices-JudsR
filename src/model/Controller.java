@@ -9,6 +9,7 @@ public class Controller {
     private SalaCine cinemark; // Declarando sala de cine
     private MatrizNumerica matriz1;
     private MatrizNumerica matriz2;
+    private MatrizNumerica matrizSuma;
 
     /**
      * Constructor de la clase Controller para inicializar 
@@ -27,6 +28,10 @@ public class Controller {
 
     public void inicializaMatriz2(int i, int j) {
         matriz2 = new MatrizNumerica(i,j);
+    }
+
+    public void inicializaMatrizSuma(int i, int j) {
+        matrizSuma = new MatrizNumerica(i,j);
     }
 
     public void inicialiceSala() {
@@ -55,6 +60,10 @@ public class Controller {
 
     public MatrizNumerica getMatriz2() {
         return matriz2;
+    }
+
+    public MatrizNumerica getMatrizSuma() {
+        return matrizSuma;
     }
 
 
