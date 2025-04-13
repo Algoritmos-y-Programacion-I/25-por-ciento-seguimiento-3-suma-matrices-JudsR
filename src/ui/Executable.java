@@ -110,7 +110,10 @@ public class Executable {
             System.out.println("Fin del programa.");
         }
 
-        /*if (cont.getMatriz1().getCantFilas() > cont.getMatriz2().getCantFilas()) {
+    }
+
+
+    /*if (cont.getMatriz1().getCantFilas() > cont.getMatriz2().getCantFilas()) {
             if (cont.getMatriz1().getCantColumnas() > cont.getMatriz2().getCantColumnas()) {
                 cont.inicializaMatrizSuma(cont.getMatriz1().getCantFilas(), cont.getMatriz1().getCantColumnas());
             } else {
@@ -163,7 +166,6 @@ public class Executable {
                     
                 }
             }*/
-    }
 
     /**
      * Método principal (main) para iniciar la ejecución del programa.
