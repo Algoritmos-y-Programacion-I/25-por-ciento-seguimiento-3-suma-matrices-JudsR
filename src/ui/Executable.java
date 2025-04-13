@@ -58,8 +58,10 @@ public class Executable {
 
             System.out.println("\nInserte los numeros que conformaran a la matriz "+x+": ");
             for(int i = 0; i < filas; i++) {
+                int filaActual = i++;
                 for(int j = 0; j < columnas; j++) {
-                    System.out.println("Insertar dato en fila " + i + " y columna " + j + ": ");
+                    int columnaActual = j++;
+                    System.out.println("Insertar dato en fila " + filaActual + " y columna " + columnaActual + ": ");
                     int valor = escaner.nextInt();
                     escaner.nextLine();
                     if (x == 1) {
@@ -83,7 +85,7 @@ public class Executable {
             }
         }
 
-        if (cont.getMatriz1().getCantFilas() != cont.getMatriz2().getCantFilas() || cont.getMatriz1().getCantColumnas() != cont.getMatriz2().getCantColumnas()) {
+        if (cont.getMatriz1().getCantFilas() == cont.getMatriz2().getCantFilas() || cont.getMatriz1().getCantColumnas() == cont.getMatriz2().getCantColumnas()) {
             System.out.println("\nAhora bien, procederemos a sumar las matrices #1 y #2.");
             System.out.println("Este es el resultado de la suma:");
 
@@ -101,8 +103,10 @@ public class Executable {
                 }
                 System.out.println();
             }
+            System.out.println("Fin del programa.");
+
         } else {
-            System.out.println("Debido a que la cantidad de espacios en ambas matrices no son iguales no se puede realizar una suma.");
+            System.out.println("\nDebido a que la cantidad de espacios en ambas matrices no son iguales no se puede realizar una suma.");
             System.out.println("Fin del programa.");
         }
 
