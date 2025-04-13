@@ -20,5 +20,11 @@ public class MatrizNumerica {
         return matriz;
     }
 
+    public int[][] getCantFilas() {
+        return this.cantFilas;
+    }
 
+    public int[][] getCantColumnas() {
+        return this.cantColumnas;
+    }
 }

@@ -16,9 +16,17 @@ public class Controller {
      * @pre No se requieren precondiciones específicas.
      * @post Se crea una instancia de Controller 
      */
-    public Controller() {
+    /*public Controller() {
         matriz1 = new MatrizNumerica(2,2);
         matriz2 = new MatrizNumerica(2,2);
+    }*/
+
+    public void inicializaMatriz1(int i, int j) {
+        matriz1 = new MatrizNumerica(i,j);
+    }
+
+    public void inicializaMatriz2(int i, int j) {
+        matriz2 = new MatrizNumerica(i,j);
     }
 
     public void inicialiceSala() {
