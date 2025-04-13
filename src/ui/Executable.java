@@ -58,9 +58,9 @@ public class Executable {
 
             System.out.println("\nInserte los numeros que conformaran a la matriz "+x+": ");
             for(int i = 0; i < filas; i++) {
-                int filaActual = i++;
+                int filaActual = i+1;
                 for(int j = 0; j < columnas; j++) {
-                    int columnaActual = j++;
+                    int columnaActual = j+1;
                     System.out.println("Insertar dato en fila " + filaActual + " y columna " + columnaActual + ": ");
                     int valor = escaner.nextInt();
                     escaner.nextLine();
